@@ -198,7 +198,7 @@ HTML notebook that will be saved to the same directory with the extension
 docker run --rm \
     --env-file .env \
     -v $(pwd)/notebooks:/data \
-    sagebionetworks/challenge-analysis:4.1.0 \
+    sagebionetworks/challenge-analysis:latest \
     render /data/examples/*.Rmd
 ```
 
