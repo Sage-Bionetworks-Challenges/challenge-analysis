@@ -12,9 +12,9 @@ on:
   pull_request:
 
 env:
-  docker_repository: sagebionetworks/rstudio
+  docker_repository: sagebionetworks/challenge-analysis
   # github.event.repository.clone_url not available for on: schedule
-  clone_url: https://github.com/Sage-Bionetworks/rstudio.git
+  clone_url: https://github.com/Sage-Bionetworks-Challenges/challenge-analysis.git
   # github.event.repository.default_branch not available for on: schedule
   default_branch: main
 
@@ -30,7 +30,7 @@ jobs:
         args: Dockerfile
     - name: Check that packages in requirements.txt files are in asc order
       run: |
-        sort -f --check conda/sage-bionetworks/requirements.txt
+        sort -f --check conda/challenge-analysis/requirements.txt
 
   test:
     needs: [lint]
@@ -62,8 +62,7 @@ jobs:
           PUSH_IMAGE=true
           PUSH_NOTEBOOKS=true
         elif [[ $GITHUB_REF == refs/tags/* ]]; then
-          # VERSION=${GITHUB_REF#refs/tags/}
-          VERSION=$(cat RSTUDIO_VERSION)
+          VERSION=${GITHUB_REF#refs/tags/}
         elif [[ $GITHUB_REF == refs/heads/* ]]; then
           VERSION=$(echo ${GITHUB_REF#refs/heads/} | sed -r 's#/+#-#g')
           if [ "${{ github.event.repository.default_branch }}" = "$VERSION" ]; then

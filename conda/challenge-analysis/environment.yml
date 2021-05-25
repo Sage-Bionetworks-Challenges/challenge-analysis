@@ -1,4 +1,4 @@
-name: sage-bionetworks
+name: challenge-analysis
 channels:
   - defaults
 dependencies:
