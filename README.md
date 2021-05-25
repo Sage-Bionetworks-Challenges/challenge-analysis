@@ -51,17 +51,17 @@ All packages:
 
 - [Docker Engine] >=19.03.0
 
-## Example notebooks
+## Notebooks
 
-The example notebooks below are rendered to HTML and published to GitHub Pages
-by the [CI/CD workflow of this repository](.github/workflows/ci.yml).
+The notebooks below are rendered to HTML and published to GitHub Pages by the
+[CI/CD workflow of this repository](.github/workflows/ci.yml).
 
 Rmd Notebook | Description | HTML Notebook
 -------- | ----------- | -------------
-[notebook.Rmd](notebooks/examples/notebook.Rmd)         | Default RStudio notebook.                                | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/notebook.html)
-[r-and-python.Rmd](notebooks/examples/r-and-python.Rmd) | Shows how to use R and Python together.                  | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/r-and-python.html)
-[sagethemes.Rmd](notebooks/examples/sagethemes.Rmd)     | Example notebook provided by the R library [sagethemes]. | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/sagethemes.html)
-[synapse.Rmd](notebooks/examples/synapse.Rmd)           | Shows how to interact with Synapse API.                  | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/synapse.html)
+[compare-models-to-baseline.Rmd](notebooks/compare-models-to-baseline.Rmd)         | Bootstrap analysis: determine which models are better than baseline or comparator.                                | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/compare-models-to-baseline.html)
+[determine-top-performers.Rmd](notebooks/determine-top-performers.Rmd) | Bootstrap analysis: Determine top performers.                  | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/determine-top-performers.html)
+[ensemble-analysis.Rmd](notebooks/ensemble-analysis.Rmd)     | Ensemble model analysis. | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/ensemble-analysis.html)
+[survey-analysis.Rmd](notebooks/survey-analysis.Rmd)           | Post Challenge Survey Analysis.                  | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/survey-analysis.html)
 
 > Important: Please make sure when you write your own notebooks that no
 > sensitive information ends up being publicly available. Please check with the
@@ -197,9 +197,9 @@ HTML notebook that will be saved to the same directory with the extension
 ```console
 docker run --rm \
     --env-file .env \
-    -v $(pwd)/notebooks:/data \
+    -v $(pwd)/notebooks:/notebooks \
     sagebionetworks/challenge-analysis:latest \
-    render /data/examples/*.Rmd
+    render /notebooks/*.Rmd
 ```
 
 ## Versioning
@@ -223,9 +223,9 @@ The table below describes the image tags available.
 | `latest`                        | Yes    | Latest stable release.
 | `edge`                          | Yes    | Lastest commit made to the default branch.
 | `weekly`                        | Yes    | Weekly release from the default branch.
-| `<major>`                       | Yes    | Latest stable major release of R/RStudio.
-| `<major>.<minor>`               | Yes    | Latest stable minor release of R/RStudio.
-| `<major>.<minor>.<patch>`       | Yes    | Latest stable patch release of R/RStudio.
+| `<major>`                       | Yes    | Latest stable major release of this analysis.
+| `<major>.<minor>`               | Yes    | Latest stable minor release of this analysis.
+| `<major>.<minor>.<patch>`       | Yes    | Latest stable patch release of this analysis.
 | `<major>.<minor>.<patch>-<sha>` | No     | Same as above but with the reference to the git commit.
 
 You should avoid using a moving tag like `latest` when deploying containers in
