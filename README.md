@@ -130,36 +130,36 @@ create the configuration file `~/.synapseConfig` when the container starts.
 ## Using Conda
 
 This Docker image comes with [Miniconda] installed (see below) and an example
-Conda environment named `sage-bionetworks`. This environment includes packages
+Conda environment named `challenge-analysis`. This environment includes packages
 used to interact with the collaborative platform [Synapse] developed by [Sage
 Bionetworks].
 
 ### From the terminal
 
-Attach to the RStudio container (here assuming that `rstudio` is the name of the
-container). For better safety, it is recommended to work as a non-root user. You
-can then list the environments available, activate an existing environment or
-create a new one.
+Attach to the RStudio container (here assuming that `challenge-analysis` is the
+name of the container). For better safety, it is recommended to work as a
+non-root user. You can then list the environments available, activate an
+existing environment or create a new one.
 
 ```console
-$ docker exec -it rstudio bash
+$ docker exec -it challenge-analysis bash
 container # su yourusername
 container $ conda env list
-container $ conda activate sage-bionetworks
+container $ conda activate challenge-analysis
 ```
 
 ### From RStudio
 
 The R code below lists the environment available before activating the existing
-environment named `sage-bionetworks`.
+environment named `challenge-analysis`.
 
 ```console
 > library(reticulate)
 > conda_list()
     name                              python
 1 miniconda           /opt/miniconda/bin/python
-2      sage-bionetworks /opt/miniconda/envs/sage-bionetworks/bin/python
-> use_condaenv("sage-bionetworks", required = TRUE)
+2      challenge-analysis /opt/miniconda/envs/challenge-analysis/bin/python
+> use_condaenv("challenge-analysis", required = TRUE)
 ```
 
 ## Setting user / group identifiers
@@ -183,7 +183,7 @@ Set the environment variable `ROOT=TRUE` (default is `FALSE`).
 ## Accessing logs
 
 ```console
-docker logs --follow rstudio
+docker logs --follow challenge-analysis
 ```
 
 ## Generating an HTML notebook
@@ -198,7 +198,7 @@ HTML notebook that will be saved to the same directory with the extension
 docker run --rm \
     --env-file .env \
     -v $(pwd)/notebooks:/data \
-    sagebionetworks/rstudio:4.1.0 \
+    sagebionetworks/challenge-analysis:4.1.0 \
     render /data/examples/*.Rmd
 ```
 

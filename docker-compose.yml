@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: challenge-analysis-rstudio
+    container_name: challenge-analysis
     env_file:
       - .env
     volumes:
