@@ -14,33 +14,15 @@ environments in research and engineering. The environment should be intuitive to
 use so that anyone can deploy it and reproduce your results - even you six
 months from now!
 
-This project provides a portable development environment that enables you to use
-R and Python together. The Docker image [sagebionetworks/challenge-analysis]
-offered by this project is based on the image [sagebionetworks/rstudio].
+This project provides a portable development environment that enables you to run
+the analysis included in this repository (see [Notebooks](#Notebooks)). The
+Docker image [sagebionetworks/challenge-analysis] provided by this project and
+that enables to run the notebooks seamlessly is based on the image
+[sagebionetworks/rstudio].
 
-Features:
-
-- Use sentitive information like credentials without specifying them in your
-  notebooks, hence preventing the risk of publishing this information publicly.
-- Create and manage Conda environments (Miniconda) using the R library
-  [reticulate] to run and/or develop Python programs that require different
-  version of Python or packages.
-- Render Rmd notebook to HTML using the Docker image provided in this project,
-  e.g. to generate HTML notebooks in GitHub workflows before publishing them to
-  GitHub Pages.
-- Benefit from regular updates of the image [sagebionetworks/challenge-analysis]
-  which will bring the latest versions of R/RStudio and other dependencies
-  (Miniconda, R and Python packages).
-- You only need the Docker Engine on your system to develop code in R and Python
-  (see [Requirements](#requirements)).
-
-This image includes the following common Sage Bionetworks software:
-
-- R libraries
-  - [sagethemes]: Sage-branded plot themes.
-- Python packages
-  - [challengeutils]: Synapse challenge utility functions.
-  - [synapseclient]: Programmatic interface to Synapse services for Python.
+For more information on how to use this repository to develop and publish your
+own analysis, please read the section [How to use this
+repository](#How-to-use-this-repository).
 
 All packages:
 
@@ -58,10 +40,10 @@ The notebooks below are rendered to HTML and published to GitHub Pages by the
 
 Rmd Notebook | Description | HTML Notebook
 -------- | ----------- | -------------
-[compare-models-to-baseline.Rmd](notebooks/compare-models-to-baseline.Rmd)         | Bootstrap analysis: determine which models are better than baseline or comparator.                                | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/compare-models-to-baseline.html)
-[determine-top-performers.Rmd](notebooks/determine-top-performers.Rmd) | Bootstrap analysis: Determine top performers.                  | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/determine-top-performers.html)
-[ensemble-analysis.Rmd](notebooks/ensemble-analysis.Rmd)     | Ensemble model analysis. | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/ensemble-analysis.html)
-[survey-analysis.Rmd](notebooks/survey-analysis.Rmd)           | Post Challenge Survey Analysis.                  | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/survey-analysis.html)
+[compare-models-to-baseline.Rmd](notebooks/compare-models-to-baseline.Rmd)         | A simple description of a bootstrap analysis to determine the performance of participants relative to a comparator model.                                | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/compare-models-to-baseline.html)
+[determine-top-performers.Rmd](notebooks/determine-top-performers.Rmd) | A simple description of a bootstrap analysis to determine the top performers in a challenge.                  | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/determine-top-performers.html)
+[ensemble-analysis.Rmd](notebooks/ensemble-analysis.Rmd)     | A simple description of an ensemble analysis for a challenge. | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/ensemble-analysis.html)
+[survey-analysis.Rmd](notebooks/survey-analysis.Rmd)           | A simple description of a post-challenge survey analysis.                  | [![HTML notebook](https://img.shields.io/badge/latest-blue.svg?color=1283c3&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://sage-bionetworks-challenges.github.io/rstudio/latest/notebooks/survey-analysis.html)
 
 > Important: Please make sure when you write your own notebooks that no
 > sensitive information ends up being publicly available. Please check with the
