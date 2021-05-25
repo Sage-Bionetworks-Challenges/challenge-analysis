@@ -3,7 +3,7 @@
 [![GitHub Release](https://img.shields.io/github/release/Sage-Bionetworks-Challenges/challenge-analysis.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/Sage-Bionetworks-Challenges/challenge-analysis/releases)
 [![GitHub CI](https://img.shields.io/github/workflow/status/Sage-Bionetworks-Challenges/challenge-analysis/CI.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/Sage-Bionetworks-Challenges/challenge-analysis)
 [![GitHub License](https://img.shields.io/github/license/Sage-Bionetworks-Challenges/challenge-analysis.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/Sage-Bionetworks-Challenges/challenge-analysis/blob/main/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/sagebionetworks/rstudio.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=pulls&logo=docker)](https://hub.docker.com/r/sagebionetworks/rstudio)
+[![Docker Pulls](https://img.shields.io/docker/pulls/sagebionetworks/challenge-analysis.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=pulls&logo=docker)](https://hub.docker.com/r/sagebionetworks/challenge-analysis)
 
 A template project for challenge analysis in R and Python
 
