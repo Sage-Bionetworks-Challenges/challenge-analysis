@@ -1,7 +1,0 @@
-#!/bin/bash
-#
-# Render an Rmd notebook to HTML or PDF.
-
-set -euo pipefail
-
-Rscript /render.R "$@"
