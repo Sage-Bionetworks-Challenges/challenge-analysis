@@ -169,7 +169,7 @@ jobs:
 
     - name: Update Docker Hub repository description
       if: steps.prep.outputs.push_image == 'true'
-      uses: peter-evans/dockerhub-description@v2
+      uses: peter-evans/dockerhub-description@v3
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
